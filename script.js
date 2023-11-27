@@ -27,7 +27,12 @@ let input=document.getElementById('weather').value
         output.style.color="black"
     }
     console.log(text)
+}).catch(err=>{
+    document.getElementById("output").innerHTML=""
+    
+    document.getElementById('output').insertAdjacentHTML("beforeend",`<span>Enter your city name</span>`)
 })
+
 
 })
 
