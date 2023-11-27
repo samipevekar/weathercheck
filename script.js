@@ -20,7 +20,7 @@ let input=document.getElementById('weather').value.trim()
     document.getElementById('output').insertAdjacentHTML("beforeend",`<p>Weather : ${text.description}</p>`)
 
     if(text.temperature=='' || text.wind=='' || text.description=='' ){
-        document.getElementById("output").innerHTML="Error : enter your city name"
+        document.getElementById("output").innerHTML="Error : enter correct city name"
         output.style.color="red"
         output.style.fontSize="20px"
     }
