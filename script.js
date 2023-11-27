@@ -4,17 +4,14 @@ submit.addEventListener("click",()=>{
     
 let input=document.getElementById('weather').value.trim()
     let api ="https://goweather.herokuapp.com/weather/"+input
-    fetch(api)
-.then(res=>{
-    if(res.ok){
-        
-    return res.json()
-
+    if(input===''){
+        document.getElementById("output").innerHTML="<span>Enter your city name</span>"
     }
     else{
-        document.getElementById('output').insertAdjacentHTML("beforeend",`<h2>Error 404 : try after some time</h2>`)
-    }
-}).then(text =>{
+    fetch(api)
+.then(res=>{        
+    return res.json()
+  }).then(text =>{
     
     
     document.getElementById('output').innerHTML = '';
@@ -30,15 +27,16 @@ let input=document.getElementById('weather').value.trim()
     else if(text===''){
         document.getElementById("output").innerHTML="Error : application is not working"
     }
-    else if(text.input===''){
+    else if(input.value==''){
         document.getElementById("output").innerHTML="Enter your city name"
     }
+
     
     else{
         output.style.color="black"
     }
     console.log(text)
-})
+})}
 
 
 })
