@@ -5,7 +5,7 @@ submit.addEventListener("click",()=>{
 let input=document.getElementById('weather').value.trim()
     let api ="https://goweather.herokuapp.com/weather/"+input
     if(input===''){
-        document.getElementById("output").innerHTML="<span>Enter your city name</span>"
+        document.getElementById("output").innerHTML="<span>Enter correct city name</span>"
     }
     else{
     fetch(api)
