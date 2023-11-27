@@ -27,6 +27,8 @@ let input=document.getElementById('weather').value
         output.style.color="black"
     }
     console.log(text)
+}).catch(err=>{
+    document.getElementById('output').insertAdjacentHTML("beforeend","<h1>Error 404 : use after some time</h1>")
 })
 
 })
