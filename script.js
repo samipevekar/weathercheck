@@ -5,7 +5,7 @@ submit.addEventListener("click",()=>{
 let input=document.getElementById('weather').value.trim()
     let api ="https://goweather.herokuapp.com/weather/"+input
     if(input===''){
-        document.getElementById("output").innerHTML="<span>Enter correct city name</span>"
+        document.getElementById("output").innerHTML="<span>Enter your city name</span>"
     }
     else{
     fetch(api)
@@ -19,19 +19,11 @@ let input=document.getElementById('weather').value.trim()
     document.getElementById('output').insertAdjacentHTML("beforeend",`<p>Wind : ${text.wind}</p>`)
     document.getElementById('output').insertAdjacentHTML("beforeend",`<p>Weather : ${text.description}</p>`)
 
-    if(text.temperature=='' || text.wind=='' || text.description=='' ){
-        document.getElementById("output").innerHTML="Error : enter correct city name"
+    if(text.temperature==''){
+        document.getElementById("output").innerHTML="<span>Error : enter correct city name</span>"
         output.style.color="red"
         output.style.fontSize="20px"
-    }
-    else if(text===''){
-        document.getElementById("output").innerHTML="Error : application is not working"
-    }
-    else if(input.value==''){
-        document.getElementById("output").innerHTML="Enter your city name"
-    }
-
-    
+    }    
     else{
         output.style.color="black"
     }
